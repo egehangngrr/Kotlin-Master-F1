@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pilot_navigation"
+    app:startDestination="@id/fragmentPilots">
+
+    <fragment
+        android:id="@+id/fragmentPilots"
+        android:name="com.ozzy.kukaf1.fragments.FragmentPilots"
+        android:label="fragment_pilots_fragment"
+        tools:layout="@layout/fragment_pilots_fragment" >
+        <action
+            android:id="@+id/goToDetail"
+            app:destination="@+id/fragmentPilotDetail"
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentPilotDetail"
+        android:name="com.ozzy.kukaf1.fragments.FragmentPilotDetail"
+        android:label="fragment_pilot_detail_fragment"
+        tools:layout="@layout/fragment_pilot_detail_fragment" >
+        <argument
+            android:name="pilotId"
+            app:argType="integer" />
+    </fragment>
+</navigation>
